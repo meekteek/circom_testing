@@ -9,3 +9,5 @@ circuits/*.wasm
 circuits/*.zkey
 circuits/hashwithsalt_js/*
 !circuits/hashwithsalt_js/input.json
+circuits/bool_gates_js/*
+!circuits/bool_gates_js/input.json
