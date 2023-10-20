@@ -1,0 +1,11 @@
+# circom lib libraries
+node_modules/*
+package-lock.json
+
+# circom output
+circuits/*.r1cs
+circuits/*.vkey.json
+circuits/*.wasm
+circuits/*.zkey
+circuits/hashwithsalt_js/*
+!circuits/hashwithsalt_js/input.json
