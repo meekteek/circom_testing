@@ -24,14 +24,14 @@ template num2_fourbits() {
 template num2bits(nBits) {
     signal input value;
     signal output bits[nBits];
-    var working_value;
+    var accum = 0;
 
     for (var i = 0; i < nBits; i++) {
         bits[i] <-- value \ (2**i) % 2;
         bits[i] * (bits[i] - 1) === 0;
-        working_value += 2**i * bits[i];
+        accum += 2**i * bits[i];
     }
-    working_value === value;
+    accum === value;
 }
 /* INPUT = {
     "value": "17"
