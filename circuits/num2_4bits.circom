@@ -17,8 +17,23 @@ template num2_fourbits() {
 
     bits[0] + 2*bits[1] + 4*bits[2] + 8*bits[3] === value;
 }
-
-component main = num2_fourbits();
 /* INPUT = {
     "value": "11"
 } */
+
+template num2bits(nBits) {
+    signal input value;
+    signal output bits[nBits];
+    var working_value;
+
+    for (var i = 0; i < nBits; i++) {
+        bits[i] <-- value \ (2**i) % 2;
+        bits[i] * (bits[i] - 1) === 0;
+        working_value += 2**i * bits[i];
+    }
+    working_value === value;
+}
+/* INPUT = {
+    "value": "17"
+} */
+component main = num2_fourbits();
