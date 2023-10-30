@@ -11,3 +11,6 @@ circuits/hashwithsalt_js/*
 !circuits/hashwithsalt_js/input.json
 circuits/bool_gates_js/*
 !circuits/bool_gates_js/input.json
+circuits/algorithms_js/*
+!circuits/algorithms_js/input.json
+circuits/algorithms_cpp/*
