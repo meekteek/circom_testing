@@ -17,6 +17,7 @@ template num2_fourbits() {
 
     bits[0] + 2*bits[1] + 4*bits[2] + 8*bits[3] === value;
 }
+// zkrepl input into num2_fourbits
 /* INPUT = {
     "value": "11"
 } */
@@ -33,7 +34,19 @@ template num2bits(nBits) {
     }
     accum === value;
 }
+// zkrepl input into num2bits
 /* INPUT = {
     "value": "17"
 } */
-component main = num2_fourbits();
+
+// this reverses the sequence of bits. 
+// manually calculating answer is trivial but this is an exercise in arithmetization 
+template reverse_nums(n) {
+    signal input nums[n];
+    signal output nums_out[n];
+    for (var i = 0; i < n; i++) {
+        nums_out[i] <== nums[n - i - 1];
+    }
+}
+
+component main = reverse_nums(2);
